@@ -1,9 +1,14 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			characters: [],
+      characters: [],
 			globalUrl: "https://www.swapi.tech/api/people"
+      planets: [],
+			globalUrlPlanets: "https://www.swapi.tech/api/planets"
 		},
+	
+			
+			
 		actions: {
 			// Use getActions to call a function within a fuction
 			getCharacters: async () => {
@@ -12,20 +17,37 @@ const getState = ({ getStore, getActions, setStore }) => {
 				if (responseAsJson.next != null) {
 					setStore({ globalUrl: responseAsJson.next });
 				}
+        
 				responseAsJson.results.map(element => {
-					getActions().setCharacters(element);
+          getActions().setCharacters(element);
 				});
 			},
-			setCharacters: oneCharacter => {
+      setCharacters: oneCharacter => {
 				getStore().characters.push(oneCharacter);
-				console.log(getStore().characters);
-				console.log(oneCharacter);
 			},
-
-			setGlobalUrl: globalUrlList => {
+      setGlobalUrl: globalUrlList => {
 				setStore({
 					globalUrl: globalUrlList
 				});
+      
+      getPlanets: async () => {
+				const response = await fetch(getStore().globalUrl);
+				const responseAsJson = await response.json();
+				if (responseAsJson.next != null) {
+					setStore({ globalUrlPlanets: responseAsJson.next });
+				}
+				responseAsJson.results.map(element => {
+					getActions().setPlanets(element);
+				});
+			},
+			setPlanets: onePlanet => {
+				getStore().planets.push(onePlanet);
+			},					
+
+      setGlobalUrlPlanets: globalUrlList => {
+				setStore({
+					globalUrlPlanets: globalUrlList
+         });
 			}
 		}
 	};
