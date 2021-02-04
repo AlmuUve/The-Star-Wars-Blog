@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-import "../../styles/demo.scss";
-import "../../styles/charactersCardDeck.scss";
+import "../../styles/index.scss";
 
 export const Characters = () => {
 	const { store, actions } = useContext(Context);

@@ -1,2 +1,75 @@
 @import "~bootstrap/scss/bootstrap";
 
+body{
+    background-color: black;
+}
+//StarWars logo
+.headerLogo{
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
+}
+.MuiBreadcrumbs-ol{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    list-style: none;
+}
+ol.MuiBreadcrumbs-ol{
+     margin: 2rem;
+}
+.MuiBreadcrumbs-separator {
+    color: #F7A000;
+}
+.MuiBreadcrumbs-li a{
+    color: #F7A000;
+}
+.MuiBreadcrumbs-li a:hover {
+  color: white;
+}
+svg{
+    color: #F7A000;
+}
+svg.MuiSvgIcon-root{
+    background-color: black;
+}
+.PrivateBreadcrumbCollapsed-icon-4:hover{
+    color: white;
+}
+//Characters
+div.d-flex.flex-column {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+.container{
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-around;
+}
+img.card-img-top{
+    width: 19rem;
+    height: 26rem;
+}
+.card{
+    margin-bottom: 2rem;
+}
+//Planets
+.planets_card{
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-around;
+}
+//Footer
+.footer_container{
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+}
+.footer_icon{
+    color: white;
+    font-size: 1rem;
+}

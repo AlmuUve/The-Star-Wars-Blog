@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import CardDeck from "react-bootstrap/CardDeck";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-import "../../styles/demo.scss";
+import "../../styles/index.scss";
 
 export const Characters = () => {
 	const { store, actions } = useContext(Context);
@@ -22,13 +22,8 @@ export const Characters = () => {
 							<Card.Text>Holaaaaaaaa</Card.Text>
 						</Card.Body>
 						<Card.Footer>
-							<Link to="/">
-								<button className="btn btn-primary">Back home</button>
-							</Link>
-							<Link to="/">
-								<button className="btn btn-outline-warning">
-									<i className="fa fa-heart-o" aria-hidden="true" />
-								</button>
+							<Link to={"/details/" + character.uid}>
+								<button className="btn btn-primary">+ Info</button>
 							</Link>
 						</Card.Footer>
 					</Card>

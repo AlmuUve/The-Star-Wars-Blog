@@ -1,0 +1,28 @@
+@import "~bootstrap/scss/bootstrap";
+
+body{
+    background: black;
+    overflow: hidden;
+}
+.wrapper{
+    display: flex;
+    height: 100%;
+    width: 60%;
+    margin: 0 auto;
+}
+.scroll-text{
+    color: #ffc909;
+    font-size: 3vw;
+    line-height: 1.5em;
+    font-weight: bold;
+    text-align: justify;
+    position: relative;
+    animation: scroll 60s linear forwards;
+}
+h1, h2{
+    text-align: center;
+}
+@keyframes scroll {
+    from { top: 0; }
+    to { top: -7500px }
+}

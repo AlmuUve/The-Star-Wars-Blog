@@ -2,17 +2,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			characters: [],
-			globalUrl: "https://www.swapi.tech/api/people",
+			characterDetails: [],
 			planets: [],
+			globalUrl: "https://www.swapi.tech/api/people",
 			globalUrlPlanets: "https://www.swapi.tech/api/planets",
 			favouritesCharacters: [],
 			deleteFavouritesCharacters: []
 		},
 
 		actions: {
-			// Use getActions to call a function within a fuction
 			getCharacters: async () => {
-				const response = await fetch(getStore().globalUrl); //notice the use of fetch api
+				const response = await fetch(getStore().globalUrl);
 				const responseAsJson = await response.json();
 				if (responseAsJson.next != null) {
 					setStore({ globalUrl: responseAsJson.next });
@@ -63,12 +63,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			setDeleteMyFavouritesCharacters: elqueseborra => {
-				// console.log(getStore().favouritesCharacters.indexOf(deleteFavouritesCharacters));
+			setDeleteMyFavouritesCharacters: deletedCharacters => {
 				setStore({
-					favouritesCharacters: getStore().favouritesCharacters.filter(item => item != elqueseborra)
+					favouritesCharacters: getStore().favouritesCharacters.filter(item => item != deletedCharacters)
 				});
 				console.log(getStore().favouritesCharacters);
+			},
+
+			getCharacterDetails: async uid => {
+				let url = "https://www.swapi.tech/api/people/".concat(uid);
+				const response = await fetch(url);
+				const responseAsJson = await response.json();
+				setStore({ characterDetails: [responseAsJson.result.properties] });
 			}
 		}
 	};
