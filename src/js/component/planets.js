@@ -7,20 +7,15 @@ import "../../styles/demo.scss";
 
 import Card from "react-bootstrap/Card";
 
-export const PlanetsCardDeck = () => {
+export const Planets = () => {
 	const { store, actions } = useContext(Context);
-	console.log("comprobando store", typeof store.planets);
-
-	store.planets.map(planet => {
-		console.log(planet);
-	});
 
 	return (
-		<div className="container">
+		<div className="planets_card">
 			{store.planets.map((planet, index) => {
 				return (
 					<Card key={index.toString()}>
-						<Card.Img variant="top" src="holder.js/100px160" />
+						<Card.Img className="planets_image" variant="top" />
 						<Card.Body>
 							<Card.Title> {planet.name} </Card.Title>
 							<Card.Text>
@@ -29,7 +24,9 @@ export const PlanetsCardDeck = () => {
 							</Card.Text>
 						</Card.Body>
 						<Card.Footer>
-							<button className="btn btn-primary">+ Info</button>
+							<Link to="/details">
+								<button className="btn btn-primary">+ Info</button>
+							</Link>
 							<button className="btn btn-primary">Fav</button>
 						</Card.Footer>
 					</Card>

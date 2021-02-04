@@ -15,11 +15,9 @@ export const TheNavbar = () => {
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
 			<Navbar.Collapse id="basic-navbar-nav">
 				<Nav className="mr-auto">
-					<Nav.Link href="#home">Home</Nav.Link>
-					<Nav.Link href="#link">Characters</Nav.Link>
-					<Nav.Link href="#link">Planets</Nav.Link>
-					<Nav.Link href="#link">About</Nav.Link>
-					<Nav.Link href="#link">Contact</Nav.Link>
+					<Link to="/home">Home</Link>
+					<Link to="/characters">Characters</Link>
+					<Link to="/planets">Planets</Link>
 					<NavDropdown title="Dropdown" id="basic-nav-dropdown">
 						<NavDropdown.Item href="#action/3.1" />
 						<NavDropdown.Item href="#action/3.2" />

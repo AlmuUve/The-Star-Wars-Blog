@@ -22,8 +22,8 @@ export const Characters = () => {
 							<Card.Text>Holaaaaaaaa</Card.Text>
 						</Card.Body>
 						<Card.Footer>
-							<Link to="/">
-								<button className="btn btn-primary">Back home</button>
+							<Link to="/details">
+								<button className="btn btn-primary">+ Info</button>
 							</Link>
 							<Link to="/">
 								<button className="btn btn-outline-warning">
