@@ -13,15 +13,22 @@ export const Characters = () => {
 			{store.characters.map((character, index) => {
 				return (
 					<Card key={index.toString()}>
-						<Card.Img variant="top" src="holder.js/100px160" />
+						<Card.Img
+							variant="top"
+							src="https://i.pinimg.com/originals/34/69/5f/34695fafb7ebb88e880f798a81af0d40.png"
+						/>
 						<Card.Body>
 							<Card.Title>{character.name}</Card.Title>
 							<Card.Text>Holaaaaaaaa</Card.Text>
 						</Card.Body>
 						<Card.Footer>
-							<small className="text-muted">Last updated 3 mins ago</small>
 							<Link to="/">
 								<button className="btn btn-primary">Back home</button>
+							</Link>
+							<Link to="/">
+								<button className="btn btn-outline-warning">
+									<i className="fa fa-heart-o" aria-hidden="true" />
+								</button>
 							</Link>
 						</Card.Footer>
 					</Card>

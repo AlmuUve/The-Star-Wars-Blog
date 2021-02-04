@@ -6,12 +6,11 @@ import { Home } from "./views/home";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
+import { TheNavbar } from "./component/thenavbar";
 import { Footer } from "./component/footer";
 
 import { PlanetsCardDeck } from "./component/planetsCardDeck";
 import { Characters } from "./component/characters";
-
 
 //create your first component
 const Layout = () => {
@@ -23,9 +22,9 @@ const Layout = () => {
 		<div className="d-flex flex-column">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar />
-					<PlanetsCardDeck />
+					<TheNavbar />
 					<Characters />
+					<PlanetsCardDeck />
 					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>

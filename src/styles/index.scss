@@ -1,6 +1,16 @@
 @import "~bootstrap/scss/bootstrap";
 
+div.d-flex.flex-column {
+    background-image: url(https://files.slack.com/files-pri/T0BFXMWMV-F01LVEB1K9T/pexels-photo-924824.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background-color: rgb(44, 43, 43);
+}
 .container{
     display: inline-flex;
     flex-wrap: wrap;
+}
+img.card-img-top{
+    width: 19rem;
+    height: 26rem;
 }
