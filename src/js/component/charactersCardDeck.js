@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import Card from "react-bootstrap/Card";
-import CardDeck from "react-bootstrap/CardDeck";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/demo.scss";
+import "../../styles/charactersCardDeck.scss";
 
 export const Characters = () => {
 	const { store, actions } = useContext(Context);
@@ -26,7 +26,9 @@ export const Characters = () => {
 								<button className="btn btn-primary">Back home</button>
 							</Link>
 							<Link to="/">
-								<button className="btn btn-outline-warning">
+								<button
+									className="btn btn-outline-warning"
+									onClick={() => actions.setMyFavouritesCharacters(character.name)}>
 									<i className="fa fa-heart-o" aria-hidden="true" />
 								</button>
 							</Link>

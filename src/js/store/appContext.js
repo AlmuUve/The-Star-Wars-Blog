@@ -20,9 +20,15 @@ const injectContext = PassedComponent => {
 		useEffect(
 			() => {
 				state.actions.getCharacters(state.store.globalUrl);
-        state.actions.getPlanets(state.store.globalUrlPlanets);
 			},
 			[state.store.globalUrl]
+		);
+
+		useEffect(
+			() => {
+				state.actions.getPlanets(state.store.globalUrlPlanets);
+			},
+			[state.store.globalUrlPlanets]
 		);
 
 		return (

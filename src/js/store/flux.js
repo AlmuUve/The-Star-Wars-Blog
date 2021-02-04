@@ -1,14 +1,14 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-      characters: [],
-			globalUrl: "https://www.swapi.tech/api/people"
-      planets: [],
-			globalUrlPlanets: "https://www.swapi.tech/api/planets"
+			characters: [],
+			globalUrl: "https://www.swapi.tech/api/people",
+			planets: [],
+			globalUrlPlanets: "https://www.swapi.tech/api/planets",
+			favouritesCharacters: [],
+			deleteFavouritesCharacters: []
 		},
-	
-			
-			
+
 		actions: {
 			// Use getActions to call a function within a fuction
 			getCharacters: async () => {
@@ -17,21 +17,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 				if (responseAsJson.next != null) {
 					setStore({ globalUrl: responseAsJson.next });
 				}
-        
+
 				responseAsJson.results.map(element => {
-          getActions().setCharacters(element);
+					getActions().setCharacters(element);
 				});
 			},
-      setCharacters: oneCharacter => {
+			setCharacters: oneCharacter => {
 				getStore().characters.push(oneCharacter);
 			},
-      setGlobalUrl: globalUrlList => {
+			setGlobalUrl: globalUrlList => {
 				setStore({
 					globalUrl: globalUrlList
 				});
-      
-      getPlanets: async () => {
-				const response = await fetch(getStore().globalUrl);
+			},
+
+			getPlanets: async () => {
+				const response = await fetch(getStore().globalUrlPlanets);
 				const responseAsJson = await response.json();
 				if (responseAsJson.next != null) {
 					setStore({ globalUrlPlanets: responseAsJson.next });
@@ -42,12 +43,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			setPlanets: onePlanet => {
 				getStore().planets.push(onePlanet);
-			},					
+			},
 
-      setGlobalUrlPlanets: globalUrlList => {
+			setGlobalUrlPlanets: planetsUrlList => {
 				setStore({
-					globalUrlPlanets: globalUrlList
-         });
+					globalUrlPlanets: planetsUrlList
+				});
+			},
+
+			setMyFavouritesCharacters: myFavouritesCharactersName => {
+				if (
+					!getStore().favouritesCharacters.find(favouritesCharacter => {
+						return favouritesCharacter == myFavouritesCharactersName;
+					})
+				) {
+					setStore({
+						favouritesCharacters: [...getStore().favouritesCharacters, myFavouritesCharactersName]
+					});
+				}
+			},
+
+			setDeleteMyFavouritesCharacters: elqueseborra => {
+				// console.log(getStore().favouritesCharacters.indexOf(deleteFavouritesCharacters));
+				setStore({
+					favouritesCharacters: getStore().favouritesCharacters.filter(item => item != elqueseborra)
+				});
+				console.log(getStore().favouritesCharacters);
 			}
 		}
 	};
