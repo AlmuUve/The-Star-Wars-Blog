@@ -4,7 +4,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			characters: [],
 			globalUrl: "https://www.swapi.tech/api/people",
 			planets: [],
-			globalUrlPlanets: "https://www.swapi.tech/api/planets"
+			globalUrlPlanets: "https://www.swapi.tech/api/planets",
+			favouritesCharacters: [],
+			deleteFavouritesCharacters: []
 		},
 
 		actions: {
@@ -47,6 +49,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({
 					globalUrlPlanets: planetsUrlList
 				});
+			},
+
+			setMyFavouritesCharacters: myFavouritesCharactersName => {
+				if (
+					!getStore().favouritesCharacters.find(favouritesCharacter => {
+						return favouritesCharacter == myFavouritesCharactersName;
+					})
+				) {
+					setStore({
+						favouritesCharacters: [...getStore().favouritesCharacters, myFavouritesCharactersName]
+					});
+				}
+			},
+
+			setDeleteMyFavouritesCharacters: elqueseborra => {
+				// console.log(getStore().favouritesCharacters.indexOf(deleteFavouritesCharacters));
+				setStore({
+					favouritesCharacters: getStore().favouritesCharacters.filter(item => item != elqueseborra)
+				});
+				console.log(getStore().favouritesCharacters);
 			}
 		}
 	};

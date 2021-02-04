@@ -9,11 +9,6 @@ import Card from "react-bootstrap/Card";
 
 export const PlanetsCardDeck = () => {
 	const { store, actions } = useContext(Context);
-	console.log("comprobando store", typeof store.planets);
-
-	store.planets.map(planet => {
-		console.log(planet);
-	});
 
 	return (
 		<div className="container">
