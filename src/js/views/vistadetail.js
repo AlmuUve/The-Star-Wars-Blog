@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import PropTypes from "prop-types";
+
+import { Context } from "../store/appContext";
+
 import Button from "react-bootstrap/Button";
 import Jumbotron from "react-bootstrap/Jumbotron";
 
 import "../../styles/vistadetail.scss";
 
 export const VistaDetail = () => {
-	let { id } = useParams(globalUrl);
+	const { store, actions } = useContext(Context);
+	const params = useParams();
+
+	useEffect(() => {
+		actions.getCharacterDetails(params.id);
+		console.log(params, "soy un param!");
+	}, []);
+
 	return (
 		<Jumbotron>
 			<div className="row">
-				<h1>Hello!</h1>
-				<p>Details</p>
+				{store.characterDetails.length > 0 ? (
+					<>
+						<h1>{store.characterDetails[0].name}</h1> <p>{store.characterDetails[0].birth_year}</p>
+					</>
+				) : (
+					"loading"
+				)}
 				<p>
 					<Button variant="primary">Learn more</Button>
 				</p>
@@ -23,4 +40,8 @@ export const VistaDetail = () => {
 			</div>
 		</Jumbotron>
 	);
+};
+
+VistaDetail.propTypes = {
+	match: PropTypes.object
 };

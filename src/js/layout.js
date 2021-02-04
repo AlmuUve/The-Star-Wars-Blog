@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
@@ -24,7 +24,7 @@ const Layout = () => {
 						<Route exact path="/home" component={Home} />
 						<Route exact path="/characters" component={Characters} />
 						<Route exact path="/planets" component={Planets} />
-						<Route exact path="/details" component={VistaDetail} />
+						<Route exact path="/details/:id" component={VistaDetail} />
 						<Route>
 							<h1>The force is not with you!</h1>
 						</Route>

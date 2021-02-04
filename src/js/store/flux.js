@@ -2,15 +2,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			characters: [],
+			characterDetails: [],
 			globalUrl: "https://www.swapi.tech/api/people",
 			planets: [],
 			globalUrlPlanets: "https://www.swapi.tech/api/planets"
 		},
 
 		actions: {
-			// Use getActions to call a function within a fuction
 			getCharacters: async () => {
-				const response = await fetch(getStore().globalUrl); //notice the use of fetch api
+				const response = await fetch(getStore().globalUrl);
 				const responseAsJson = await response.json();
 				if (responseAsJson.next != null) {
 					setStore({ globalUrl: responseAsJson.next });
@@ -47,6 +47,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({
 					globalUrlPlanets: planetsUrlList
 				});
+			},
+
+			getCharacterDetails: async uid => {
+				let url = "https://www.swapi.tech/api/people/".concat(uid);
+				const response = await fetch(url);
+				const responseAsJson = await response.json();
+				setStore({ characterDetails: [responseAsJson.result.properties] });
 			}
 		}
 	};

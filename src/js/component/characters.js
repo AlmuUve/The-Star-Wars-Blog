@@ -22,13 +22,8 @@ export const Characters = () => {
 							<Card.Text>Holaaaaaaaa</Card.Text>
 						</Card.Body>
 						<Card.Footer>
-							<Link to="/details">
+							<Link to={"/details/" + character.uid}>
 								<button className="btn btn-primary">+ Info</button>
-							</Link>
-							<Link to="/">
-								<button className="btn btn-outline-warning">
-									<i className="fa fa-heart-o" aria-hidden="true" />
-								</button>
 							</Link>
 						</Card.Footer>
 					</Card>
