@@ -32,6 +32,10 @@ const injectContext = PassedComponent => {
 			[state.store.globalUrlPlanets]
 		);
 
+		// useEffect(() => {
+		// 	setLocalStorage();
+		// }, []);
+
 		return (
 			<Context.Provider value={state}>
 				<PassedComponent {...props} />

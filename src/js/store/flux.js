@@ -73,7 +73,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let url = "https://www.swapi.tech/api/people/".concat(uid);
 				const response = await fetch(url);
 				const responseAsJson = await response.json();
-				setStore({ characterDetails: [responseAsJson.result.properties] });
+				setStore({
+					characterDetails: [responseAsJson.result.properties]
+				});
+			},
+
+			setLocalStorage: () => {
+				const store = getStore();
+				localStorage.setItem("characters", JSON.stringify(store.characters));
+				localStorage.setItem("planets", JSON.stringify(store.planets));
+
+				setStore({
+					characters: JSON.parse(localStorage.getItem("characters")),
+					planets: JSON.parse(localStorage.getItem("planets"))
+				});
 			}
 		}
 	};

@@ -13,6 +13,7 @@ import "../styles/index.scss";
 
 const Layout = () => {
 	const basename = process.env.BASENAME || "";
+
 	return (
 		<div className="d-flex flex-column">
 			<BrowserRouter basename={basename}>

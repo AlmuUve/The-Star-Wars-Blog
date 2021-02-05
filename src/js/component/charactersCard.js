@@ -18,7 +18,7 @@ export const CharactersCard = () => {
 						/>
 						<Card.Body>
 							<Card.Title>{character.name}</Card.Title>
-							<Card.Text>Holaaaaaaaa</Card.Text>
+							<Card.Text>{character.name}</Card.Text>
 						</Card.Body>
 						<Card.Footer>
 							<Link to={"/details/" + character.uid}>

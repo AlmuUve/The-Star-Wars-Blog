@@ -19,7 +19,15 @@ export const ViewDetailCharacters = () => {
 			<div className="row">
 				{store.characterDetails.length > 0 ? (
 					<>
-						<h1>{store.characterDetails[0].name}</h1> <p>{store.characterDetails[0].birth_year}</p>
+						<h1>Name: {store.characterDetails[0].name}</h1>
+						<p>Birth year: {store.characterDetails[0].birth_year}</p>
+						<p>Eye color: {store.characterDetails[0].eye_color}</p>
+						<p>Gender: {store.characterDetails[0].gender}</p>
+						<p>Hair color: {store.characterDetails[0].hair_color}</p>
+						<p>Heigth: {store.characterDetails[0].heigth}</p>
+						<p>Mass: {store.characterDetails[0].mass}</p>
+						<p>Skin color: {store.characterDetails[0].skin_color}</p>
+						<p>Homeworld: {store.characterDetails[0].homeworld}</p>
 					</>
 				) : (
 					"loading"
