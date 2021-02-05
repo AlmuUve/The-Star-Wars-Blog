@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import { ViewDetailCharacters } from "./views/viewdetailcharacters";
+import { ViewDetailPlanets } from "./views/viewdetailplanets";
 import injectContext from "./store/appContext";
 import { StarWarsLogo } from "./component/header";
 import { TheNavbar } from "./component/theNavbar";
@@ -24,7 +25,8 @@ const Layout = () => {
 						<Route exact path="/" component={Home} />
 						<Route exact path="/characters" component={CharactersCard} />
 						<Route exact path="/planets" component={PlanetsCard} />
-						<Route exact path="/details/:id" component={ViewDetailCharacters} />
+						<Route exact path="/charactersdetails/:id" component={ViewDetailCharacters} />
+						<Route exact path="/planetsdetails/:id" component={ViewDetailPlanets} />
 						<Route>
 							<h1>The force is not with you!</h1>
 						</Route>

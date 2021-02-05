@@ -1,14 +1,13 @@
 import React, { useContext } from "react";
-import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import Card from "react-bootstrap/Card";
 import "../../styles/index.scss";
 
 export const CharactersCard = () => {
 	const { store, actions } = useContext(Context);
-
 	return (
-		<div className="container">
+		<div className="cardContainer">
 			{store.characters.map((character, index) => {
 				return (
 					<Card key={index.toString()}>
@@ -21,7 +20,7 @@ export const CharactersCard = () => {
 							<Card.Text>Holaaaaaaaa</Card.Text>
 						</Card.Body>
 						<Card.Footer>
-							<Link to={"/details/" + character.uid}>
+							<Link to={"/charactersdetails/" + character.uid}>
 								<button className="btn btn-primary">+ Info</button>
 							</Link>
 							<Link>

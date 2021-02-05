@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			characters: [],
 			characterDetails: [],
 			planets: [],
+			planetDetails: [],
 			globalUrl: "https://www.swapi.tech/api/people",
 			globalUrlPlanets: "https://www.swapi.tech/api/planets",
 			favouritesCharacters: [],
@@ -31,6 +32,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				});
 			},
 
+			getCharacterDetails: async uid => {
+				let charactersUrl = "https://www.swapi.tech/api/people/".concat(uid);
+				const response = await fetch(charactersUrl);
+				const responseAsJson = await response.json();
+				setStore({ characterDetails: [responseAsJson.result.properties] });
+			},
+
 			getPlanets: async () => {
 				const response = await fetch(getStore().globalUrlPlanets);
 				const responseAsJson = await response.json();
@@ -51,6 +59,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				});
 			},
 
+			getPlanetsDetails: async uid => {
+				let planetsUrl = "https://www.swapi.tech/api/planets/".concat(uid);
+				const response = await fetch(planetsUrl);
+				const responseAsJson = await response.json();
+				setStore({ planetDetails: [responseAsJson.result.properties] });
+			},
+
 			setMyFavouritesCharacters: myFavouritesCharactersName => {
 				if (
 					!getStore().favouritesCharacters.find(favouritesCharacter => {
@@ -67,13 +82,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({
 					favouritesCharacters: getStore().favouritesCharacters.filter(item => item != deletedCharacters)
 				});
-			},
-
-			getCharacterDetails: async uid => {
-				let url = "https://www.swapi.tech/api/people/".concat(uid);
-				const response = await fetch(url);
-				const responseAsJson = await response.json();
-				setStore({ characterDetails: [responseAsJson.result.properties] });
 			}
 		}
 	};
