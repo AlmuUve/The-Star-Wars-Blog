@@ -37,8 +37,8 @@ export const ViewDetailCharacters = () => {
 				</p>
 				<div className="img-square-wrapper pb-2">
 					<img
-						className="imgBrazil img-responsive mx-auto d-block"
-						src="https://images.theconversation.com/files/289953/original/file-20190828-184192-j9w2v2.jpg"
+						className="charactersImg"
+						src="https://i.pinimg.com/originals/34/69/5f/34695fafb7ebb88e880f798a81af0d40.png"
 					/>
 				</div>
 			</div>
