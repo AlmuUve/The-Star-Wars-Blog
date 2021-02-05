@@ -2,14 +2,14 @@ import React from "react";
 import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
-import { VistaDetail } from "./views/vistadetail";
+import { ViewDetailCharacters } from "./views/viewdetailcharacters";
 import injectContext from "./store/appContext";
 import { StarWarsLogo } from "./component/header";
 import { TheNavbar } from "./component/theNavbar";
 import { Footer } from "./component/footer";
-import { Characters } from "./component/charactersCardDeck";
-import { Planets } from "./component/planets";
-// import "../../styles/index.scss";
+import { CharactersCard } from "./component/charactersCard";
+import { PlanetsCard } from "./component/planetsCard";
+import "../styles/index.scss";
 
 const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -21,12 +21,13 @@ const Layout = () => {
 					<TheNavbar />
 					<Switch>
 						<Route exact path="/home" component={Home} />
-						<Route exact path="/characters" component={Characters} />
-						<Route exact path="/planets" component={Planets} />
-						<Route exact path="/details/:id" component={VistaDetail} />
-						{/* <Route>
+						<Route exact path="/" component={Home} />
+						<Route exact path="/characters" component={CharactersCard} />
+						<Route exact path="/planets" component={PlanetsCard} />
+						<Route exact path="/details/:id" component={ViewDetailCharacters} />
+						<Route>
 							<h1>The force is not with you!</h1>
-						</Route> */}
+						</Route>
 					</Switch>
 					<Footer />
 				</ScrollToTop>
@@ -36,15 +37,3 @@ const Layout = () => {
 };
 
 export default injectContext(Layout);
-
-{
-	/* <BrowserRouter basename={basename}>
-				<ScrollToTop>
-					<StarWarsLogo />
-					<TheNavbar />
-					<Characters />
-					<PlanetsCardDeck />
-					<Footer />
-				</ScrollToTop>
-			</BrowserRouter> */
-}

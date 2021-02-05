@@ -6,13 +6,12 @@ import Button from "react-bootstrap/Button";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import "../../styles/index.scss";
 
-export const VistaDetail = () => {
+export const ViewDetailCharacters = () => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 
 	useEffect(() => {
 		actions.getCharacterDetails(params.id);
-		console.log(params, "soy un param!");
 	}, []);
 
 	return (
@@ -39,6 +38,6 @@ export const VistaDetail = () => {
 	);
 };
 
-VistaDetail.propTypes = {
+ViewDetailCharacters.propTypes = {
 	match: PropTypes.object
 };

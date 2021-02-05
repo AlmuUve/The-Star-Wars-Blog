@@ -57,6 +57,12 @@ img.card-img-top{
     margin-bottom: 2rem;
 }
 //Planets
+.planets_image {
+    background-image: url(https://img.unocero.com/2020/01/nasa-descubre-planeta-tatooine.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background-color: rgb(44, 43, 43);
+}
 .planets_card{
     display: inline-flex;
     flex-wrap: wrap;

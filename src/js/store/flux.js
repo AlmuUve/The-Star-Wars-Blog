@@ -67,7 +67,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({
 					favouritesCharacters: getStore().favouritesCharacters.filter(item => item != deletedCharacters)
 				});
-				console.log(getStore().favouritesCharacters);
 			},
 
 			getCharacterDetails: async uid => {

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/index.scss";
 
-export const Characters = () => {
+export const CharactersCard = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
@@ -21,10 +21,10 @@ export const Characters = () => {
 							<Card.Text>Holaaaaaaaa</Card.Text>
 						</Card.Body>
 						<Card.Footer>
-							<Link to="/">
-								<button className="btn btn-primary">Back home</button>
+							<Link to={"/details/" + character.uid}>
+								<button className="btn btn-primary">+ Info</button>
 							</Link>
-							<Link to="/">
+							<Link>
 								<button
 									className="btn btn-outline-warning"
 									onClick={() => actions.setMyFavouritesCharacters(character.name)}>

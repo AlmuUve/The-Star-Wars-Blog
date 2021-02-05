@@ -4,15 +4,15 @@ import { Context } from "../store/appContext";
 import "../../styles/index.scss";
 import Card from "react-bootstrap/Card";
 
-export const Planets = () => {
+export const PlanetsCard = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="planets_card">
+		<div className="container">
 			{store.planets.map((planet, index) => {
 				return (
 					<Card key={index.toString()}>
-						<Card.Img className="planets_image" variant="top" />
+						<Card.Img variant="top" src="holder.js/100px160" />
 						<Card.Body>
 							<Card.Title> {planet.name} </Card.Title>
 							<Card.Text>
@@ -21,7 +21,7 @@ export const Planets = () => {
 							</Card.Text>
 						</Card.Body>
 						<Card.Footer>
-							<Link to="/details">
+							<Link to={"/details/" + character.uid}>
 								<button className="btn btn-primary">+ Info</button>
 							</Link>
 							<button className="btn btn-primary">Fav</button>
