@@ -18,12 +18,19 @@ const injectContext = PassedComponent => {
 			})
 		);
 
-		useEffect(
-			() => {
-				state.actions.getCharacters(state.store.globalUrl);
-			},
-			[state.store.globalUrl]
-		);
+		useEffect(async () => {
+			let getLocalStorage = JSON.parse(localStorage.getItem("characters"));
+			let getGlobalUrl = JSON.parse(localStorage.getItem("globalUrl"));
+			if (getLocalStorage == undefined) {
+				await state.actions.getCharacters(state.store.globalUrl);
+				localStorage.setItem("characters", JSON.stringify(state.store.characters));
+				localStorage.setItem("globalUrl", JSON.stringify(state.store.globalUrl));
+			} else {
+				//seteamos
+				state.store.characters = getLocalStorage;
+				state.store.globalUrl = getGlobalUrl;
+			}
+		}, []);
 
 		useEffect(
 			() => {
@@ -31,10 +38,6 @@ const injectContext = PassedComponent => {
 			},
 			[state.store.globalUrlPlanets]
 		);
-
-		// useEffect(() => {
-		// 	setLocalStorage();
-		// }, []);
 
 		return (
 			<Context.Provider value={state}>

@@ -3,18 +3,19 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import Card from "react-bootstrap/Card";
 import "../../styles/index.scss";
+import Luke from "../../img/1.png";
 
 export const CharactersCard = () => {
 	const { store, actions } = useContext(Context);
+	const image = {
+		1: Luke
+	};
 	return (
 		<div className="cardContainer">
 			{store.characters.map((character, index) => {
 				return (
 					<Card key={index.toString()}>
-						<Card.Img
-							variant="top"
-							src="https://i.pinimg.com/originals/34/69/5f/34695fafb7ebb88e880f798a81af0d40.png"
-						/>
+						<Card.Img variant="top" src={image[character.uid]} />
 						<Card.Body>
 							<Card.Title>{character.name}</Card.Title>
 							<Card.Text>{character.name}</Card.Text>
@@ -34,6 +35,7 @@ export const CharactersCard = () => {
 					</Card>
 				);
 			})}
+			<button onClick={() => actions.getCharacters()}> Soy un botón </button>
 		</div>
 	);
 };

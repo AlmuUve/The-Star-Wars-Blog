@@ -13,22 +13,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 		actions: {
 			getCharacters: async () => {
+				const store = getStore();
 				const response = await fetch(getStore().globalUrl);
 				const responseAsJson = await response.json();
 				if (responseAsJson.next != null) {
 					setStore({ globalUrl: responseAsJson.next });
 				}
-
 				responseAsJson.results.map(element => {
-					getActions().setCharacters(element);
-				});
-			},
-			setCharacters: oneCharacter => {
-				getStore().characters.push(oneCharacter);
-			},
-			setGlobalUrl: globalUrlList => {
-				setStore({
-					globalUrl: globalUrlList
+					setStore({ characters: [...store.characters, element] });
 				});
 			},
 
@@ -40,22 +32,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getPlanets: async () => {
+				const store = getStore();
 				const response = await fetch(getStore().globalUrlPlanets);
 				const responseAsJson = await response.json();
 				if (responseAsJson.next != null) {
 					setStore({ globalUrlPlanets: responseAsJson.next });
 				}
 				responseAsJson.results.map(element => {
-					getActions().setPlanets(element);
-				});
-			},
-			setPlanets: onePlanet => {
-				getStore().planets.push(onePlanet);
-			},
-
-			setGlobalUrlPlanets: planetsUrlList => {
-				setStore({
-					globalUrlPlanets: planetsUrlList
+					setStore({ planets: [...store.planets, element] });
 				});
 			},
 
@@ -81,17 +65,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			setDeleteMyFavouritesCharacters: deletedCharacters => {
 				setStore({
 					favouritesCharacters: getStore().favouritesCharacters.filter(item => item != deletedCharacters)
-				});
-			},
-
-			setLocalStorage: () => {
-				const store = getStore();
-				localStorage.setItem("characters", JSON.stringify(store.characters));
-				localStorage.setItem("planets", JSON.stringify(store.planets));
-
-				setStore({
-					characters: JSON.parse(localStorage.getItem("characters")),
-					planets: JSON.parse(localStorage.getItem("planets"))
 				});
 			}
 		}

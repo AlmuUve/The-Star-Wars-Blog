@@ -1,9 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Route, withRouter, Switch } from "react-router-dom";
-import { Link } from "react-router-dom";
-import ReactDOM from "react-dom";
+import { BrowserRouter, Route, withRouter, Switch, Link } from "react-router-dom";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { makeStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
