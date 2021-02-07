@@ -11,23 +11,19 @@ export const CharactersCard = () => {
 			{store.characters.map((character, index) => {
 				return (
 					<Card key={index.toString()}>
-						<Card.Img
-							variant="top"
-							src="https://i.pinimg.com/originals/34/69/5f/34695fafb7ebb88e880f798a81af0d40.png"
-						/>
+						<Card.Img variant="top" src="https://i.imgur.com/eKb8rr6.png" />
 						<Card.Body>
 							<Card.Title>{character.name}</Card.Title>
-							<Card.Text>Holaaaaaaaa</Card.Text>
 						</Card.Body>
 						<Card.Footer>
 							<Link to={"/charactersdetails/" + character.uid}>
-								<button className="btn btn-primary">+ Info</button>
+								<button className="btn">Learn more</button>
 							</Link>
 							<Link>
 								<button
-									className="btn btn-outline-warning"
+									className="btn bg-transparent"
 									onClick={() => actions.setMyFavouritesCharacters(character.name)}>
-									<i className="fa fa-heart-o" aria-hidden="true" />
+									<i className="fa fa-heart animate__animated animate__heartBeat animate__infinite	infinite" />
 								</button>
 							</Link>
 						</Card.Footer>

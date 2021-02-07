@@ -11,7 +11,6 @@ import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Typography from "@material-ui/core/Typography";
 import { SearchBar } from "./searchbar";
 import "../../styles/index.scss";
-// import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles(theme => ({
 	margin: {
@@ -41,7 +40,7 @@ export const TheNavbar = () => {
 	});
 
 	return (
-		<Breadcrumbs maxItems={2} aria-label="breadcrumb">
+		<Breadcrumbs aria-label="breadcrumb">
 			<Link to="/home" color="inherit">
 				Home
 			</Link>
@@ -60,7 +59,6 @@ export const TheNavbar = () => {
 					<SearchBar>
 						<Route exact path="/charactersdetails/:uid" component={SearchBar} />
 					</SearchBar>
-					{/* <Menu /> */}
 				</Switch>
 			</BrowserRouter>
 		</Breadcrumbs>

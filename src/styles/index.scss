@@ -3,12 +3,15 @@
 body{
     background-color: black;
 }
+
 //StarWars logo
 .headerLogo{
     display: flex;
     justify-content: center;
     padding-top: 1.5rem;
 }
+
+//Navbar
 .MuiBreadcrumbs-ol{
     display: flex;
     flex-wrap: wrap;
@@ -17,64 +20,131 @@ body{
     align-items: center;
     list-style: none;
 }
+
 ol.MuiBreadcrumbs-ol{
      margin: 2rem;
 }
+
 .MuiBreadcrumbs-separator {
-    color: #F7A000;
+    color: rgb(255, 238, 83);
 }
+
 .MuiBreadcrumbs-li a{
-    color: #F7A000;
+    color: rgb(255, 238, 83);
 }
+
 .MuiBreadcrumbs-li a:hover {
   color: white;
 }
+
 svg{
-    color: #F7A000;
+    color: rgb(255, 238, 83);
 }
-svg.MuiSvgIcon-root{
-    background-color: black;
-}
+
 .PrivateBreadcrumbCollapsed-icon-4:hover{
     color: white;
 }
+
+//Searchbar
+#combo-box-demo{
+    height: 0.5px;
+}
+
 //Characters
 div.d-flex.flex-column {
     display: inline-flex;
     flex-wrap: wrap;
 }
+
 .cardContainer{
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
+
 img.card-img-top{
     width: 19rem;
     height: 26rem;
 }
-.card{
+
+div.card{
+    background-color:  rgba(15, 15, 15, 0.582);
+    margin-bottom: 2rem;  
+}
+
+.card-title.h5{
+    color: rgb(255, 238, 83);
+}
+
+.card-footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+button.btn{
+    background-color: rgb(250, 229, 39);
+}
+
+.btn.bg-transparent:focus{
+    box-shadow: none;
+}
+
+.fa{
+    color: red;
+}
+
+.fa:hover{
+    color: rgb(150, 0, 0);
+}
+
+// Characters & Planets View Details
+.row.flex-row{
+    display: flex;
+    justify-items: space-between;
+}
+
+div.jumbotron{
+    background-color:  rgba(15, 15, 15, 0.582);
+}
+
+.img-square-wrapper{
+    margin-left: 2rem;
+}
+div.card.view{
+    background-color: rgba(51, 49, 49, 0);
+}
+
+div.card-body.view{
+    background-color: transparent;
+    margin-top: -40px;
+    color: rgb(250, 229, 39);
+}
+.h1view{
     margin-bottom: 2rem;
 }
-//Planets
+
+// Planets
 .planets_image {
     background-image: url(https://img.unocero.com/2020/01/nasa-descubre-planeta-tatooine.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    // background-color: rgb(44, 43, 43);
 }
+
 .planets_card{
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: center;
     justify-content: space-around;
 }
-//Footer
+
+// Footer
 .footer_container{
     display: flex;
     justify-content: center;
     color: whitesmoke;
 }
+
 .footer_icon{
     color: white;
     font-size: 1rem;

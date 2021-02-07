@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../../styles/index.scss";
 
 export const Footer = () => (
-	<footer className="footer_container mt-auto py-3 text-center">
+	<footer className="footer_container text-center">
 		<p>
 			Made with <i className="fa fa-heart text-danger" /> by Almu and Rafaela
 		</p>

@@ -5,10 +5,10 @@ export const StarWarsLogo = () => {
 	return (
 		<div className="headerLogo">
 			<img
-				src="https://logodownload.org/wp-content/uploads/2015/12/star-wars-logo-3-1.png"
+				src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Star_Wars_Yellow_Logo.svg/1920px-Star_Wars_Yellow_Logo.svg.png"
 				alt="Star Wars Logo"
-				width="300"
-				height="160"
+				width="200"
+				height="100"
 			/>
 		</div>
 	);

@@ -31,9 +31,9 @@ const Layout = () => {
 							<h1>The force is not with you!</h1>
 						</Route>
 					</Switch>
-					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>
+			<Footer />
 		</div>
 	);
 };
