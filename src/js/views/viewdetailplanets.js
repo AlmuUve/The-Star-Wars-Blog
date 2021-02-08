@@ -38,8 +38,6 @@ export const ViewDetailPlanets = () => {
 									<p>Climate: {store.planetDetails[0].climate}</p>
 									<p>Terrain: {store.planetDetails[0].terrain}</p>
 									<p>Surface Water: {store.planetDetails[0].surface_water}</p>
-									<p>Created: {store.planetDetails[0].created}</p>
-									<p>Edited: {store.planetDetails[0].edited}</p>
 								</>
 							) : (
 								"loading"

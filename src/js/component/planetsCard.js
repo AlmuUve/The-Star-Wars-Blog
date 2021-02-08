@@ -30,6 +30,10 @@ export const PlanetsCard = () => {
 					</Card>
 				);
 			})}
+			<button className="planetsButton" onClick={() => actions.getPlanets()}>
+				{" "}
+				Next Page{" "}
+			</button>
 		</div>
 	);
 };

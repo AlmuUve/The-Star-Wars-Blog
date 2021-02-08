@@ -13,19 +13,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 		actions: {
 			getCharacters: async () => {
+				const store = getStore();
 				const response = await fetch(getStore().globalUrl);
 				const responseAsJson = await response.json();
 				if (responseAsJson.next != null) {
 					setStore({ globalUrl: responseAsJson.next });
 				}
-
 				responseAsJson.results.map(element => {
-					getActions().setCharacters(element);
+					setStore({ characters: [...store.characters, element] });
 				});
 			},
+
 			setCharacters: oneCharacter => {
 				getStore().characters.push(oneCharacter);
 			},
+
 			setGlobalUrl: globalUrlList => {
 				setStore({
 					globalUrl: globalUrlList
@@ -40,15 +42,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getPlanets: async () => {
+				const store = getStore();
 				const response = await fetch(getStore().globalUrlPlanets);
 				const responseAsJson = await response.json();
 				if (responseAsJson.next != null) {
 					setStore({ globalUrlPlanets: responseAsJson.next });
 				}
 				responseAsJson.results.map(element => {
-					getActions().setPlanets(element);
+					setStore({ planets: [...store.planets, element] });
 				});
 			},
+
 			setPlanets: onePlanet => {
 				getStore().planets.push(onePlanet);
 			},

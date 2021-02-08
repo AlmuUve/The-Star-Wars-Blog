@@ -30,6 +30,10 @@ export const CharactersCard = () => {
 					</Card>
 				);
 			})}
+			<button className="charactersButton" onClick={() => actions.getCharacters()}>
+				{" "}
+				Next Page{" "}
+			</button>
 		</div>
 	);
 };

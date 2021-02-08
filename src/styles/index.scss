@@ -1,7 +1,34 @@
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Kufam&display=swap');
+
+//     border-left: 0.5px solid #333;
+//     box-sizing: border-box;
+.img-square-wrapper{
+    margin-top: 4rem;
+    margin-left: 1rem;
+}
+.card-img{
+  object-fit: cover;
+  width: 10rem;
+  height: 16rem;
+}
+.img-square-wrapper:hover{
+	transform: scale(1.1);
+}
+.card-title{
+   color: rgb(255, 238, 83);
+   margin-top: 2rem;
+}
+.card-text{
+    margin-top: 2rem;
+    color: rgb(255, 238, 83);
+}
+
+
 
 body{
     background-color: black;
+    font-family: 'Kufam', cursive;
 }
 
 //StarWars logo
@@ -9,10 +36,18 @@ body{
     display: flex;
     justify-content: center;
     padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 
 //Navbar
-.MuiBreadcrumbs-ol{
+.navbar .navbar-nav .nav-link a{
+    letter-spacing: 1px;
+    color: rgb(255, 238, 83);
+    font-size: 1.1em; 
+    background-color: transparent;
+    font-family: 'Kufam', cursive;
+}
+#navbarNav{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -20,34 +55,77 @@ body{
     align-items: center;
     list-style: none;
 }
-
-ol.MuiBreadcrumbs-ol{
-     margin: 2rem;
+.navbar .navbar-nav .nav-link a:hover{
+    color: white;
+}
+@media only screen and (min-width: 960px) {
+  .navbar .navbar-nav .nav-item .nav-link {
+    padding: 0 0.5em;
+  }
+ .nav-item:not(:last-child) .nav-link {
+    border-right: 1.5px solid rgb(255, 238, 83);
+    height: 2.8rem;
+  }
 }
 
-.MuiBreadcrumbs-separator {
-    color: rgb(255, 238, 83);
+.navbar.navbar-expand-lg{
+    display: flex;
+    justify-content: center;
 }
 
-.MuiBreadcrumbs-li a{
-    color: rgb(255, 238, 83);
+.nav-link.Name * {
+    text-decoration: none;
+    margin-top: 6px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+a{
+    display: flex;
 }
 
-.MuiBreadcrumbs-li a:hover {
-  color: white;
+.dropdown.nav-item{
+    display: flex;
+    margin-top: 13px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.dropdown-menu.show{
+    background-color: rgba(15, 15, 15, 0.726);
 }
 
 svg{
     color: rgb(255, 238, 83);
 }
-
-.PrivateBreadcrumbCollapsed-icon-4:hover{
+svg:hover{
     color: white;
 }
 
 //Searchbar
+.searchbar{
+   padding-left: 1rem;
+}
+
 #combo-box-demo{
-    height: 0.5px;
+    height: 0.2px;
+    color: rgb(255, 238, 83);
+    // margin-bottom: 8px;
+}
+// .inputSearch{
+//     margin-bottom: 20rem;
+// }
+.MuiAutocomplete-root{
+    border-left: 1.5px solid rgb(255, 238, 83);
+    // margin-bottom: 8px;
+    // height: 2.6rem;
+}
+
+label{
+    padding: 0 0.5em;
+}
+
+#combo-box-demo-label{
+    font-family: 'Kufam', cursive;
 }
 
 //Characters
@@ -55,7 +133,9 @@ div.d-flex.flex-column {
     display: inline-flex;
     flex-wrap: wrap;
 }
-
+div.card{
+    box-sizing: border-box;
+}
 .cardContainer{
     display: inline-flex;
     flex-wrap: wrap;
@@ -70,9 +150,11 @@ img.card-img-top{
 
 div.card{
     background-color:  rgba(15, 15, 15, 0.582);
-    margin-bottom: 2rem;  
+    margin-bottom: 2rem; 
 }
-
+.card-body{
+    border-color: #9e4f60; 
+}
 .card-title.h5{
     color: rgb(255, 238, 83);
 }

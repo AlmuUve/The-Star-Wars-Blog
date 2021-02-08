@@ -40,27 +40,53 @@ export const TheNavbar = () => {
 	});
 
 	return (
-		<Breadcrumbs aria-label="breadcrumb">
-			<Link to="/home" color="inherit">
-				Home
-			</Link>
-			<Link to="/characters" color="inherit">
-				Characters
-			</Link>
-			<Link to="/planets" color="inherit">
-				Planets
-			</Link>
-			<Link color="inherit">Contact</Link>
-			<NavDropdown title="Favourites" id="basic-nav-dropdown">
-				{favourites}
-			</NavDropdown>
-			<BrowserRouter>
-				<Switch>
-					<SearchBar>
-						<Route exact path="/charactersdetails/:uid" component={SearchBar} />
-					</SearchBar>
-				</Switch>
-			</BrowserRouter>
-		</Breadcrumbs>
+		<nav className="navbar navbar-expand-lg ">
+			<div className="navbar" id="navbarNav">
+				<ul className="navbar-nav">
+					<li className="nav-item">
+						<a className="nav-link Name">
+							<Link to="/home" color="inherit">
+								<span>Home</span>
+							</Link>
+						</a>
+					</li>
+					<li className="nav-item">
+						<a className="nav-link Name">
+							<Link to="/characters" color="inherit">
+								<span>Characters</span>
+							</Link>
+						</a>
+					</li>
+					<li className="nav-item">
+						<a className="nav-link Name">
+							<Link to="/planets" color="inherit">
+								<span>Planets</span>
+							</Link>
+						</a>
+					</li>
+					<li className="nav-item">
+						<a className="nav-link Name" tabIndex="-1" aria-disabled="true">
+							<Link to="/contact" color="inherit">
+								<span>Contact</span>
+							</Link>
+						</a>
+					</li>
+					<li className="nav-item Name">
+						<a className="nav-link">
+							<NavDropdown title="Favourites" id="basic-nav-dropdown">
+								<span>{favourites}</span>
+							</NavDropdown>
+						</a>
+					</li>
+				</ul>
+				<BrowserRouter>
+					<Switch>
+						<SearchBar>
+							<Route exact path="/charactersdetails/:uid" component={SearchBar} />
+						</SearchBar>
+					</Switch>
+				</BrowserRouter>
+			</div>
+		</nav>
 	);
 };

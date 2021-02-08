@@ -1,5 +1,9 @@
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Kufam&display=swap');
 
+body{
+    font-family: 'Kufam', cursive;
+}
 .star {
   animation: star 10s ease-out infinite;
 }
@@ -137,4 +141,8 @@ body {
   .starwars-demo {
     font-size: 7px;
   }
+}
+
+div.text-center.mt-5{
+    margin-bottom: 26rem;
 }
