@@ -44,6 +44,21 @@ const injectContext = PassedComponent => {
 			}
 		}, []);
 
+		// useEffect(
+		// 	async () => {
+		// 		let getLocalStorage = JSON.parse(localStorage.getItem("favouritesCharacters"));
+		// 		if (getLocalStorage == undefined) {
+		// 			await localStorage.setItem(
+		// 				"favouritesCharacters",
+		// 				JSON.stringify(state.store.favouritesCharacters)
+		// 			);
+		// 		} else {
+		// 			state.store.favouritesCharacters = getLocalStorage;
+		// 		}
+		// 	},
+		// 	[favouritesCharacters]
+		// );
+
 		return (
 			<Context.Provider value={state}>
 				<PassedComponent {...props} />

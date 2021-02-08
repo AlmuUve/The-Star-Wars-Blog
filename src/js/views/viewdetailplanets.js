@@ -1,9 +1,11 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+
 import PropTypes from "prop-types";
 import Button from "react-bootstrap/Button";
 import Jumbotron from "react-bootstrap/Jumbotron";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import "../../styles/index.scss";
 
 export const ViewDetailPlanets = () => {
@@ -40,9 +42,12 @@ export const ViewDetailPlanets = () => {
 									<p>Surface Water: {store.planetDetails[0].surface_water}</p>
 								</>
 							) : (
-								"loading"
+								<CircularProgress color="warning" />
 							)}
 						</div>
+						<Link to="/planets/" className="button d-flex justify-content-start ml-3">
+							<button className="go-back-button btn btn-warning">GO BACK</button>
+						</Link>
 					</div>
 				</div>
 			</div>

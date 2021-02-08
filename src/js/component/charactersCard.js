@@ -12,7 +12,7 @@ export const CharactersCard = () => {
 				return (
 					<Card key={index.toString()}>
 						<Card.Img variant="top" src="https://i.imgur.com/eKb8rr6.png" />
-						<Card.Body>
+						<Card.Body className="card-body">
 							<Card.Title>{character.name}</Card.Title>
 						</Card.Body>
 						<Card.Footer>
@@ -30,7 +30,7 @@ export const CharactersCard = () => {
 					</Card>
 				);
 			})}
-			<button className="charactersButton" onClick={() => actions.getCharacters()}>
+			<button className="next-page-button" onClick={() => actions.getCharacters()}>
 				{" "}
 				Next Page{" "}
 			</button>

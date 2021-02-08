@@ -1,9 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Button from "react-bootstrap/Button";
 import Jumbotron from "react-bootstrap/Jumbotron";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import "../../styles/index.scss";
 
 export const ViewDetailCharacters = () => {
@@ -37,12 +38,15 @@ export const ViewDetailCharacters = () => {
 									<p>Heigth: {store.characterDetails[0].heigth}</p>
 									<p>Mass: {store.characterDetails[0].mass}</p>
 									<p>Skin color: {store.characterDetails[0].skin_color}</p>
-									<p>Homeworld: {store.characterDetails[0].homeworld}</p>
+									{/* <p>Homeworld: {store.planetDetails[0].name}</p> */}
 								</>
 							) : (
-								"loading"
+								<CircularProgress color="warning" />
 							)}
 						</div>
+						<Link to="/characters/" className="button d-flex justify-content-start ml-3">
+							<button className="go-back-button btn btn-warning">GO BACK</button>
+						</Link>
 					</div>
 				</div>
 			</div>

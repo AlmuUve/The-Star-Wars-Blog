@@ -11,6 +11,7 @@
   object-fit: cover;
   width: 10rem;
   height: 16rem;
+  
 }
 .img-square-wrapper:hover{
 	transform: scale(1.1);
@@ -23,8 +24,6 @@
     margin-top: 2rem;
     color: rgb(255, 238, 83);
 }
-
-
 
 body{
     background-color: black;
@@ -149,23 +148,29 @@ img.card-img-top{
 }
 
 div.card{
-    background-color:  rgba(15, 15, 15, 0.582);
+    background-color:  rgba(61, 61, 61, 0.8);
     margin-bottom: 2rem; 
 }
-.card-body{
-    border-color: #9e4f60; 
-}
+
 .card-title.h5{
     color: rgb(255, 238, 83);
+    margin: 0;
 }
 
 .card-footer{
     display: flex;
     justify-content: space-between;
+    margin-top: 0px;
 }
 
 button.btn{
     background-color: rgb(250, 229, 39);
+    border-radius: 0px;
+}
+button.btn:hover{
+    background-color: rgb(218, 198, 26);
+    border-radius: 0px;
+    transform: translateX(2px);
 }
 
 .btn.bg-transparent:focus{
@@ -230,4 +235,28 @@ div.card-body.view{
 .footer_icon{
     color: white;
     font-size: 1rem;
+}
+
+.go-back-button{
+   background-color: rgb(250, 229, 39);
+    border-radius: 0px;
+}
+.go-back-button:hover{
+    background-color: rgb(218, 198, 26);
+    border-radius: 0px;
+    transform: translateX(2px);
+}
+
+.next-page-button{
+    background-color: rgb(250, 229, 39);
+    border-radius: 0px;
+    height: 3rem;
+    width: 6rem;
+    border: 0;
+    margin-bottom: 5rem;
+}
+.next-page-button:hover{
+    background-color: rgb(218, 198, 26);
+    border-radius: 0px;
+    transform: translateX(2px);
 }
