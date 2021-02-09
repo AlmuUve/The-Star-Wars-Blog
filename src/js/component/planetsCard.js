@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import Card from "react-bootstrap/Card";
@@ -11,7 +11,10 @@ export const PlanetsCard = () => {
 			{store.planets.map((planet, index) => {
 				return (
 					<Card key={index.toString()}>
-						<Card.Img variant="top" src="https://i.imgur.com/eKb8rr6.png" />
+						<Card.Img
+							variant="top"
+							src="https://i.pinimg.com/originals/3b/41/e0/3b41e03ad3c84c445840a567cd922eb8.jpg"
+						/>
 						<Card.Body>
 							<Card.Title> {planet.name} </Card.Title>
 						</Card.Body>
@@ -22,7 +25,7 @@ export const PlanetsCard = () => {
 							<Link>
 								<button
 									className="btn bg-transparent"
-									onClick={() => actions.setMyFavouritesCharacters(planet.name)}>
+									onClick={() => actions.setMyFavouritesPlanets(planet.name)}>
 									<i className="fa fa-heart animate__animated animate__heartBeat animate__infinite	infinite" />
 								</button>
 							</Link>
@@ -30,9 +33,8 @@ export const PlanetsCard = () => {
 					</Card>
 				);
 			})}
-			<button className="next-page-button" onClick={() => actions.getPlanets()}>
-				{" "}
-				Next Page{" "}
+			<button className="next-page-button btn col-12" onClick={() => actions.getPlanets()}>
+				Next Page
 			</button>
 		</div>
 	);

@@ -11,7 +11,10 @@ export const CharactersCard = () => {
 			{store.characters.map((character, index) => {
 				return (
 					<Card key={index.toString()}>
-						<Card.Img variant="top" src="https://i.imgur.com/eKb8rr6.png" />
+						<Card.Img
+							variant="top"
+							src="https://media.allure.com/photos/586403e0b77939842705f905/master/pass/shutterstock_5886297ew.jpg"
+						/>
 						<Card.Body className="card-body">
 							<Card.Title>{character.name}</Card.Title>
 						</Card.Body>
@@ -30,9 +33,8 @@ export const CharactersCard = () => {
 					</Card>
 				);
 			})}
-			<button className="next-page-button" onClick={() => actions.getCharacters()}>
-				{" "}
-				Next Page{" "}
+			<button className="next-page-button btn col-12" onClick={() => actions.getCharacters()}>
+				Next Page
 			</button>
 		</div>
 	);

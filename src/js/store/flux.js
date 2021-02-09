@@ -8,7 +8,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			globalUrl: "https://www.swapi.tech/api/people",
 			globalUrlPlanets: "https://www.swapi.tech/api/planets",
 			favouritesCharacters: [],
-			deleteFavouritesCharacters: []
+			deleteFavouritesCharacters: [],
+			favouritesPlanets: [],
+			deleteFavouritesPlanets: []
 		},
 
 		actions: {
@@ -85,6 +87,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 			setDeleteMyFavouritesCharacters: deletedCharacters => {
 				setStore({
 					favouritesCharacters: getStore().favouritesCharacters.filter(item => item != deletedCharacters)
+				});
+			},
+
+			setMyFavouritesPlanets: myFavouritesPlanetsName => {
+				if (
+					!getStore().favouritesPlanets.find(favouritesPlanets => {
+						return favouritesPlanets == myFavouritesPlanetsName;
+					})
+				) {
+					setStore({
+						favouritesPlanets: [...getStore().favouritesPlanets, myFavouritesPlanetsName]
+					});
+				}
+			},
+
+			setDeleteMyFavouritesCharacters: deletedPlanets => {
+				setStore({
+					favouritesPlanets: getStore().favouritesPlanets.filter(item => item != deletedPlanets)
 				});
 			}
 		}

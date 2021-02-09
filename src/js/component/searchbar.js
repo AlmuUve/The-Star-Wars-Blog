@@ -5,8 +5,8 @@ import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 
 export const SearchBar = () => {
-	const { store, actions } = useContext(Context);
-	let options = store.characters;
+	const { store } = useContext(Context);
+	let options = (store.characters, store.planets);
 	let autocomplete = (
 		<Autocomplete
 			className="searchbar"

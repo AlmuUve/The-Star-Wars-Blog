@@ -1,11 +1,9 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, Fragment } from "react";
 import { Context } from "../store/appContext";
-import { useParams, Link } from "react-router-dom";
-
+import { useParams } from "react-router-dom";
 import PropTypes from "prop-types";
-import Button from "react-bootstrap/Button";
-import Jumbotron from "react-bootstrap/Jumbotron";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import Starship from "../../img/Millenium_Falcon.png";
 import "../../styles/index.scss";
 
 export const ViewDetailPlanets = () => {
@@ -17,41 +15,44 @@ export const ViewDetailPlanets = () => {
 	}, []);
 
 	return (
-		<Jumbotron>
-			<div className="card view">
+		<Fragment>
+			<div className="container">
 				<div className="row flex-row">
 					<div className="col-lg-6 col-md-12 col-sm-12 mt-3">
-						<div className="card-horizontal">
-							<div className="img-square-wrapper">
-								<img className="charactersImg" src="https://i.imgur.com/mZypjJY.png" />
-							</div>
-						</div>
+						<img
+							className="image_details"
+							src="https://img.unocero.com/2020/01/nasa-descubre-planeta-tatooine.jpg"
+							width="100%"
+							height="95%"
+						/>
 					</div>
-					<div className="col-lg-6 col-md-12 col-sm-12 mt-3">
-						<div className="card-body view">
-							{store.planetDetails.length > 0 ? (
-								<>
-									<h1 className="h1view">{store.planetDetails[0].name}</h1>
-									<p>Diameter: {store.planetDetails[0].diameter}</p>
-									<p>Rotational Period: {store.planetDetails[0].rotation_period}</p>
-									<p>Orbital Period: {store.planetDetails[0].orbital_period}</p>
-									<p>Gravity: {store.planetDetails[0].gravity}</p>
-									<p>Population: {store.planetDetails[0].population}</p>
-									<p>Climate: {store.planetDetails[0].climate}</p>
-									<p>Terrain: {store.planetDetails[0].terrain}</p>
-									<p>Surface Water: {store.planetDetails[0].surface_water}</p>
-								</>
-							) : (
-								<CircularProgress color="warning" />
-							)}
-						</div>
-						<Link to="/planets/" className="button d-flex justify-content-start ml-3">
-							<button className="go-back-button btn btn-warning">GO BACK</button>
-						</Link>
+					<div className="details col-lg-6 col-md-12 col-sm-12 mt-3">
+						{store.planetDetails.length > 0 ? (
+							<>
+								<h1 className="h1view">{store.planetDetails[0].name}</h1>
+								<p>Diameter: {store.planetDetails[0].diameter}</p>
+								<p>Rotational Period: {store.planetDetails[0].rotation_period}</p>
+								<p>Orbital Period: {store.planetDetails[0].orbital_period}</p>
+								<p>Gravity: {store.planetDetails[0].gravity}</p>
+								<p>Population: {store.planetDetails[0].population}</p>
+								<p>Climate: {store.planetDetails[0].climate}</p>
+								<p>Terrain: {store.planetDetails[0].terrain}</p>
+								<p>Surface Water: {store.planetDetails[0].surface_water}</p>
+							</>
+						) : (
+							<CircularProgress color="warning" />
+						)}
 					</div>
 				</div>
 			</div>
-		</Jumbotron>
+			{/* <div className="button_container">
+				<Link to="/characters/">
+					<button className="button_back_home">
+						<img className="button_image_details" src={Starship} />
+					</button>
+				</Link>
+			</div> */}
+		</Fragment>
 	);
 };
 

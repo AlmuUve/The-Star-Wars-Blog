@@ -1,14 +1,11 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Route, withRouter, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Link } from "react-router-dom";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { makeStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
-import Breadcrumbs from "@material-ui/core/Breadcrumbs";
-import Typography from "@material-ui/core/Typography";
 import { SearchBar } from "./searchbar";
 import "../../styles/index.scss";
 

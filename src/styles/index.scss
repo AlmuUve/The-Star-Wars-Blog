@@ -1,30 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Kufam&display=swap');
 
-//     border-left: 0.5px solid #333;
-//     box-sizing: border-box;
-.img-square-wrapper{
-    margin-top: 4rem;
-    margin-left: 1rem;
-}
-.card-img{
-  object-fit: cover;
-  width: 10rem;
-  height: 16rem;
-  
-}
-.img-square-wrapper:hover{
-	transform: scale(1.1);
-}
-.card-title{
-   color: rgb(255, 238, 83);
-   margin-top: 2rem;
-}
-.card-text{
-    margin-top: 2rem;
-    color: rgb(255, 238, 83);
-}
-
 body{
     background-color: black;
     font-family: 'Kufam', cursive;
@@ -45,6 +21,7 @@ body{
     font-size: 1.1em; 
     background-color: transparent;
     font-family: 'Kufam', cursive;
+    margin-bottom: 2rem;
 }
 #navbarNav{
     display: flex;
@@ -66,12 +43,10 @@ body{
     height: 2.8rem;
   }
 }
-
 .navbar.navbar-expand-lg{
     display: flex;
     justify-content: center;
 }
-
 .nav-link.Name * {
     text-decoration: none;
     margin-top: 6px;
@@ -81,18 +56,15 @@ body{
 a{
     display: flex;
 }
-
 .dropdown.nav-item{
     display: flex;
     margin-top: 13px;
     padding-left: 5px;
     padding-right: 5px;
 }
-
 .dropdown-menu.show{
-    background-color: rgba(15, 15, 15, 0.726);
+    background-color: rgba(252, 239, 124, 0.397);
 }
-
 svg{
     color: rgb(255, 238, 83);
 }
@@ -127,13 +99,10 @@ label{
     font-family: 'Kufam', cursive;
 }
 
-//Characters
+//Characters & Planets
 div.d-flex.flex-column {
     display: inline-flex;
     flex-wrap: wrap;
-}
-div.card{
-    box-sizing: border-box;
 }
 .cardContainer{
     display: inline-flex;
@@ -141,88 +110,79 @@ div.card{
     justify-content: center;
     justify-content: space-evenly;
 }
-
+div.card{
+    box-sizing: border-box;
+    background-color:  rgba(252, 239, 124, 0.397);
+    margin-bottom: 2rem; 
+}
 img.card-img-top{
     width: 19rem;
     height: 26rem;
+    border:  0.5px solid rgb(250, 229, 39);
 }
-
-div.card{
-    background-color:  rgba(61, 61, 61, 0.8);
-    margin-bottom: 2rem; 
-}
-
 .card-title.h5{
     color: rgb(255, 238, 83);
     margin: 0;
 }
-
+.card-body{
+    border-right:  0.5px solid rgb(250, 229, 39);
+    border-left:  0.5px solid rgb(250, 229, 39);
+}
 .card-footer{
     display: flex;
     justify-content: space-between;
+    border-right:  0.5px solid rgb(250, 229, 39);
+    border-left:  0.5px solid rgb(250, 229, 39);
+    border-bottom:  0.5px solid rgb(250, 229, 39);
     margin-top: 0px;
 }
-
 button.btn{
     background-color: rgb(250, 229, 39);
-    border-radius: 0px;
+    border-radius: 5%;
 }
 button.btn:hover{
     background-color: rgb(218, 198, 26);
     border-radius: 0px;
     transform: translateX(2px);
 }
-
 .btn.bg-transparent:focus{
     box-shadow: none;
 }
-
 .fa{
     color: red;
 }
-
 .fa:hover{
     color: rgb(150, 0, 0);
 }
 
 // Characters & Planets View Details
+.container{
+    background-color: rgba(252, 239, 124, 0.397);
+    margin-bottom: 2rem;
+    border:  1px solid rgb(250, 229, 39);
+}
 .row.flex-row{
     display: flex;
     justify-items: space-between;
 }
-
-div.jumbotron{
-    background-color:  rgba(15, 15, 15, 0.582);
-}
-
-.img-square-wrapper{
-    margin-left: 2rem;
-}
-div.card.view{
-    background-color: rgba(51, 49, 49, 0);
-}
-
-div.card-body.view{
-    background-color: transparent;
-    margin-top: -40px;
+.details{
     color: rgb(250, 229, 39);
 }
-.h1view{
-    margin-bottom: 2rem;
+.image_details{
+    border:  1px solid rgb(250, 229, 39);
 }
-
-// Planets
-.planets_image {
-    background-image: url(https://img.unocero.com/2020/01/nasa-descubre-planeta-tatooine.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+.title_details{
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
 }
-
-.planets_card{
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    justify-content: space-around;
+.button_back_home{
+    border-radius: 50%;
+    background-color: transparent;
+    margin-left: auto;
+}
+.button_image_details{
+    border-radius: 50%;
+    width: 60%;
 }
 
 // Footer
@@ -231,11 +191,12 @@ div.card-body.view{
     justify-content: center;
     color: whitesmoke;
 }
-
 .footer_icon{
     color: white;
     font-size: 1rem;
 }
+
+
 
 .go-back-button{
    background-color: rgb(250, 229, 39);
