@@ -6,10 +6,11 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 
 export const SearchBar = () => {
 	const { store } = useContext(Context);
-	let options = (store.characters, store.planets);
+	let options = store.characters.concat(store.planets);
+	console.log(options, "soy planets y characters");
 	let autocomplete = (
 		<Autocomplete
-			className="searchbar"
+			classes="searchbar"
 			id="combo-box-demo"
 			style={{ width: 300 }}
 			options={options}
@@ -19,7 +20,11 @@ export const SearchBar = () => {
 					<span
 						style={{ cursor: "pointer" }}
 						onClick={() => {
-							window.location.href = option.uid;
+							if (option.url.includes("people")) {
+								window.location.href = "charactersdetails/" + option.uid;
+							} else if (option.url.includes("planets")) {
+								window.location.href = "planetsdetails/" + option.uid;
+							}
 						}}>
 						{option.name}
 					</span>
@@ -28,5 +33,5 @@ export const SearchBar = () => {
 			renderInput={params => <TextField {...params} label="May the force be with you" variant="outlined" />}
 		/>
 	);
-	return <Link to={"/charactersdetails/"}>{autocomplete}</Link>;
+	return <Link to={"/"}>{autocomplete}</Link>;
 };
