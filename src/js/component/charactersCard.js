@@ -19,7 +19,7 @@ export const CharactersCard = () => {
 							<Card.Title>{character.name}</Card.Title>
 						</Card.Body>
 						<Card.Footer>
-							<Link to={"/charactersdetails/" + character.uid} className="learn_more_button">
+							<Link to={"/charactersdetails/" + character.uid} className="link_to">
 								<button className="btn">Learn more</button>
 							</Link>
 							<Link>

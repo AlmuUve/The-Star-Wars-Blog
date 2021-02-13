@@ -21,7 +21,7 @@ body{
     font-size: 1.1em; 
     background-color: transparent;
     font-family: 'Kufam', cursive;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 #navbarNav{
     display: flex;
@@ -65,6 +65,10 @@ a{
 .dropdown-menu.show{
     background-color: rgba(252, 239, 124, 0.397);
     border:  0.5px solid rgb(250, 229, 39);
+    width: 1rem;
+}
+a#basic-nav-dropdown.dropdown-toggle::after{
+    margin-left: 1rem;
 }
 svg{
     color: rgb(255, 238, 83);
@@ -74,29 +78,9 @@ svg:hover{
 }
 
 //Searchbar
-.searchbar{
-   padding-left: 1rem;
-   color: red;
-}
-
-#combo-box-demo{
-    height: 0.2px;
-    color: rgb(255, 238, 83);
-    border-color: aqua;
-}
-
-.MuiAutocomplete-root{
-    border-left: 1.5px solid rgb(255, 238, 83);
-    // margin-bottom: 8px;
-    // height: 2.6rem;
-}
-
-label{
-    padding: 0 0.5em;
-}
-
-#combo-box-demo-label{
-    font-family: 'Kufam', cursive;
+.search_bar{
+    margin-left: 0.5rem;
+    margin-bottom: 3rem;
 }
 
 //Characters & Planets
@@ -117,7 +101,7 @@ div.card{
 }
 img.card-img-top{
     width: 19rem;
-    height: 26rem;
+    height: 24rem;
     border:  0.5px solid rgb(250, 229, 39);
 }
 .card-title.h5{
@@ -136,10 +120,8 @@ img.card-img-top{
     border-bottom:  0.5px solid rgb(250, 229, 39);
     margin-top: 0px;
 }
-a.learn_more_button{
-    text-decoration: none;
-    text-transform: none;
-    text-shadow: none;
+a.link_to:link {
+  text-decoration: none;
 }
 button.btn{
     background-color: rgb(250, 229, 39);
@@ -173,15 +155,6 @@ button.btn{
     margin-top: 1rem;
     margin-bottom: 1.5rem;
 }
-// .button_back_home{
-//     border-radius: 50%;
-//     background-color: transparent;
-//     margin-left: auto;
-// }
-// .button_image_details{
-//     border-radius: 50%;
-//     width: 60%;
-// }
 
 // Footer
 .footer_container{
@@ -190,32 +163,15 @@ button.btn{
     color: whitesmoke;
     margin-top: 2rem;
 }
-
 .footer_icon{
     color: white;
     font-size: 1rem;
 }
+.error_title{
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 238, 83);
+}
 
-// .go-back-button{
-//    background-color: rgb(250, 229, 39);
-//     border-radius: 0px;
-// }
-// .go-back-button:hover{
-//     background-color: rgb(218, 198, 26);
-//     border-radius: 0px;
-//     transform: translateX(2px);
-// }
 
-// .next-page-button{
-//     background-color: rgb(250, 229, 39);
-//     border-radius: 0px;
-//     height: 3rem;
-//     width: 6rem;
-//     border: 0;
-//     margin-bottom: 5rem;
-// }
-// .next-page-button:hover{
-//     background-color: rgb(218, 198, 26);
-//     border-radius: 0px;
-//     transform: translateX(2px);
-// }
+

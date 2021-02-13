@@ -76,13 +76,15 @@ export const TheNavbar = () => {
 						</a>
 					</li>
 				</ul>
-				<BrowserRouter>
-					<Switch>
-						<SearchBar>
-							<Route exact path="/charactersdetails/:uid" component={SearchBar} />
-						</SearchBar>
-					</Switch>
-				</BrowserRouter>
+				<div className="search_bar">
+					<BrowserRouter>
+						<Switch>
+							<SearchBar>
+								<Route exact path="/charactersdetails/:uid" component={SearchBar} />
+							</SearchBar>
+						</Switch>
+					</BrowserRouter>
+				</div>
 			</div>
 		</nav>
 	);

@@ -3,7 +3,6 @@ import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 import PropTypes from "prop-types";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import Starship from "../../img/Millenium_Falcon.png";
 import "../../styles/index.scss";
 
 export const ViewDetailPlanets = () => {
@@ -45,13 +44,6 @@ export const ViewDetailPlanets = () => {
 					</div>
 				</div>
 			</div>
-			{/* <div className="button_container">
-				<Link to="/characters/">
-					<button className="button_back_home">
-						<img className="button_image_details" src={Starship} />
-					</button>
-				</Link>
-			</div> */}
 		</Fragment>
 	);
 };

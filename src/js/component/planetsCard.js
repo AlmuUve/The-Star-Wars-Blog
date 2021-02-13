@@ -19,7 +19,7 @@ export const PlanetsCard = () => {
 							<Card.Title> {planet.name} </Card.Title>
 						</Card.Body>
 						<Card.Footer>
-							<Link to={"/planetsdetails/" + planet.uid}>
+							<Link to={"/planetsdetails/" + planet.uid} className="link_to">
 								<button className="btn">Learn more</button>
 							</Link>
 							<Link>

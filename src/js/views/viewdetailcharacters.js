@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, Fragment } from "react";
 import { Context } from "../store/appContext";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import PropTypes from "prop-types";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import Starship from "../../img/Millenium_Falcon.png";
 import "../../styles/index.scss";
 
 export const ViewDetailCharacters = () => {
@@ -37,7 +36,6 @@ export const ViewDetailCharacters = () => {
 								<p>Heigth: {store.characterDetails[0].heigth}</p>
 								<p>Mass: {store.characterDetails[0].mass}</p>
 								<p>Skin color: {store.characterDetails[0].skin_color}</p>
-								{/* <p>Homeworld: {store.planetDetails[0].name}</p> */}
 							</>
 						) : (
 							<CircularProgress color="warning" />
@@ -45,13 +43,6 @@ export const ViewDetailCharacters = () => {
 					</div>
 				</div>
 			</div>
-			{/* <div className="button_container">
-				<Link to="/characters/">
-					<button className="button_back_home">
-						<img className="button_image_details" src={Starship} />
-					</button>
-				</Link>
-			</div> */}
 		</Fragment>
 	);
 };

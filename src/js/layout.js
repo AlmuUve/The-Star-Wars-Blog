@@ -30,7 +30,7 @@ const Layout = () => {
 						<Route exact path="/charactersdetails/:id" component={ViewDetailCharacters} />
 						<Route exact path="/planetsdetails/:id" component={ViewDetailPlanets} />
 						<Route>
-							<h1>The force is not with you!</h1>
+							<h1 className="error_title">THE FORCE IS NOT WITH YOU PADAWAN!</h1>
 						</Route>
 					</Switch>
 				</ScrollToTop>

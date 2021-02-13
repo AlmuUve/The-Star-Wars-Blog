@@ -1,9 +1,4 @@
 import React, { Fragment } from "react";
-import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
-import { BrowserRouter, Route, withRouter } from "react-router-dom";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import Starship from "../../img/Millenium_Falcon.png";
 import "../../styles/index.scss";
 
 export const Contact = () => {
@@ -21,28 +16,21 @@ export const Contact = () => {
 					</div>
 					<div className="details col-lg-6 col-md-12 col-sm-12 mt-3">
 						<h1 className="title_details">Almu Skywalker</h1>
-						<a>
+						<a href="https://www.linkedin.com/in/almudenavelazquezcalzada/">
 							<img src="https://img.icons8.com/fluent/96/000000/linkedin.png" />
 						</a>
-						<a>
+						<a href="https://github.com/AlmuUve">
 							<img src="https://img.icons8.com/material-sharp/96/000000/github.png" />
 						</a>
-						<a>
+						<a href="mailto: avelazqc@gmail.com">
 							<img src="https://img.icons8.com/fluent/96/000000/gmail--v1.png" />
 						</a>
-						<a>
+						<a href="https://wa.me/+34655422008">
 							<img src="https://img.icons8.com/fluent/96/000000/whatsapp.png" />
 						</a>
 					</div>
 				</div>
 			</div>
-			{/* <div className="button_container">
-				<Link to="/characters/">
-					<button className="button_back_home">
-						<img className="button_image_details" src={Starship} />
-					</button>
-				</Link>
-			</div> */}
 			<div className="container">
 				<div className="row flex-row">
 					<div className="col-lg-6 col-md-12 col-sm-12 mt-3">
@@ -70,13 +58,6 @@ export const Contact = () => {
 					</div>
 				</div>
 			</div>
-			{/* <div className="button_container">
-				<Link to="/characters/">
-					<button className="button_back_home">
-						<img className="button_image_details" src={Starship} />
-					</button>
-				</Link>
-			</div> */}
 		</Fragment>
 	);
 };

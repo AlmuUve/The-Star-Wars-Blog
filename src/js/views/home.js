@@ -7,7 +7,7 @@ export const Home = () => (
 			<img src="//cssanimation.rocks/demo/starwars/images/star.svg" alt="Star" className="star" />
 			<img src="//cssanimation.rocks/demo/starwars/images/wars.svg" alt="Wars" className="wars" />
 			<h2 className="byline" id="byline">
-				Return of the Jedi
+				Welcome Young Padawans
 			</h2>
 		</div>
 	</div>
