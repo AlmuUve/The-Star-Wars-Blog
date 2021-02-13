@@ -7,10 +7,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planetDetails: [],
 			globalUrl: "https://www.swapi.tech/api/people",
 			globalUrlPlanets: "https://www.swapi.tech/api/planets",
-			favouritesCharacters: [],
-			deleteFavouritesCharacters: [],
-			favouritesPlanets: [],
-			deleteFavouritesPlanets: []
+			favourites: [],
+			deleteFavourites: []
 		},
 
 		actions: {
@@ -72,39 +70,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ planetDetails: [responseAsJson.result.properties] });
 			},
 
-			setMyFavouritesCharacters: myFavouritesCharactersName => {
+			setMyFavourites: myFavouritesName => {
 				if (
-					!getStore().favouritesCharacters.find(favouritesCharacter => {
-						return favouritesCharacter == myFavouritesCharactersName;
+					!getStore().favourites.find(favourite => {
+						return favourite == myFavouritesName;
 					})
 				) {
 					setStore({
-						favouritesCharacters: [...getStore().favouritesCharacters, myFavouritesCharactersName]
+						favourites: [...getStore().favourites, myFavouritesName]
 					});
 				}
 			},
 
-			setDeleteMyFavouritesCharacters: deletedCharacters => {
+			setDeleteMyFavourites: deleted => {
 				setStore({
-					favouritesCharacters: getStore().favouritesCharacters.filter(item => item != deletedCharacters)
-				});
-			},
-
-			setMyFavouritesPlanets: myFavouritesPlanetsName => {
-				if (
-					!getStore().favouritesPlanets.find(favouritesPlanets => {
-						return favouritesPlanets == myFavouritesPlanetsName;
-					})
-				) {
-					setStore({
-						favouritesPlanets: [...getStore().favouritesPlanets, myFavouritesPlanetsName]
-					});
-				}
-			},
-
-			setDeleteMyFavouritesCharacters: deletedPlanets => {
-				setStore({
-					favouritesPlanets: getStore().favouritesPlanets.filter(item => item != deletedPlanets)
+					favourites: getStore().favourites.filter(item => item != deleted)
 				});
 			}
 		}

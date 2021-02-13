@@ -25,7 +25,7 @@ export const PlanetsCard = () => {
 							<Link>
 								<button
 									className="btn bg-transparent"
-									onClick={() => actions.setMyFavouritesPlanets(planet.name)}>
+									onClick={() => actions.setMyFavourites(planet.name)}>
 									<i className="fa fa-heart animate__animated animate__heartBeat animate__infinite	infinite" />
 								</button>
 							</Link>

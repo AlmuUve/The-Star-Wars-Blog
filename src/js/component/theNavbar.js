@@ -22,14 +22,14 @@ export const TheNavbar = () => {
 	const { store, actions } = useContext(Context);
 	const classes = useStyles();
 
-	const favourites = store.favouritesCharacters.map((favouritesCharacter, index) => {
+	const favourites = store.favourites.map((favourite, index) => {
 		return (
 			<NavDropdown.Item key={index.toString()}>
-				{favouritesCharacter}{" "}
+				{favourite}{" "}
 				<IconButton
 					aria-label="delete"
 					className={classes.margin}
-					onClick={() => actions.setDeleteMyFavouritesCharacters(favouritesCharacter)}>
+					onClick={() => actions.setDeleteMyFavourites(favourite)}>
 					<DeleteIcon />
 				</IconButton>
 			</NavDropdown.Item>

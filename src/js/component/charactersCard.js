@@ -19,13 +19,13 @@ export const CharactersCard = () => {
 							<Card.Title>{character.name}</Card.Title>
 						</Card.Body>
 						<Card.Footer>
-							<Link to={"/charactersdetails/" + character.uid}>
+							<Link to={"/charactersdetails/" + character.uid} className="learn_more_button">
 								<button className="btn">Learn more</button>
 							</Link>
 							<Link>
 								<button
 									className="btn bg-transparent"
-									onClick={() => actions.setMyFavouritesCharacters(character.name)}>
+									onClick={() => actions.setMyFavourites(character.name)}>
 									<i className="fa fa-heart animate__animated animate__heartBeat animate__infinite	infinite" />
 								</button>
 							</Link>
